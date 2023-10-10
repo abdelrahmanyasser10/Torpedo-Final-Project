@@ -6,6 +6,7 @@
 #include <driver/rmt.h>
 #include <WiFi.h>
 #include <Wire.h>
+#include <MPU6050.h>
 
 
 // Define motor driver pins
@@ -46,7 +47,7 @@ extern bool flag2;
 extern WiFiServer server(8080); // Server on port 8080
 extern const char* ssid;
 extern int CX;
-extern int CY;
+extern MPU6050 mpu;
 
 
 
@@ -62,6 +63,7 @@ void attach_Servo_Pin();
 void Servo_Control_Setup();
 void IR_Pin_Setup();
 void encoder_setup();
+void IMU_setup();
 
 
 // Functions
@@ -80,6 +82,10 @@ float measure_distance(int Steps);
 float measureStepsAndDistance();
 void receive();
 void Line_Following_CV();
+float get_angle();
+void sender();
+void onConnect();
+void onDisconnect();
 
 
 #endif

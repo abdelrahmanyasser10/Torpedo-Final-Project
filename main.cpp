@@ -44,4 +44,4 @@ WiFiServer server(8080); // Server on port 8080
 const char* ssid = "ESP32-Access-Point";
 
 int CX;
-
+MPU6050 mpu;
